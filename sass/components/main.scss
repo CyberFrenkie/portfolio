@@ -1,0 +1,166 @@
+.wrapper{  
+    @include flex-center-column; 
+    @include reset-p-m;
+   
+
+    color: $color-white;    
+    text-align: center;
+    .main{
+        font-family: $font-family-akaya;
+        min-height: $calc-height;
+
+        .hire-link{           
+            @include cta;                   
+        }
+    }
+    ul,a{
+        @include reset-text;
+    }
+}
+
+// ---------- HOME PAGE -----------------
+.home-wrap{
+    .main{
+        @include overlay;
+        .content-wrap{
+            @include custom-flex(space-between,center,row-reverse);
+            flex-wrap: wrap;
+            height: 60vh;
+
+            .hire-wrap{
+                z-index: 5;                
+            }
+
+            .img-wrap,img{
+                height: 100%;
+                width: auto;
+                border-radius: 25px;
+                border-bottom: 3px solid $color-primary;
+                border-right: 3px solid $color-primary;
+                z-index: 5;                
+            }
+            .text-wrap{
+                z-index: 5;
+                height: 100%;
+                
+                h1,h2{
+                    font-size: 70px;   
+                    font-family: $font-family-akaya;  
+                    text-shadow: 0 0 15px $color-primary;               
+                }
+                h1{
+                    @include custom-flex(flex-start,center,row);
+                }
+                h2{
+                    @include custom-flex(flex-end,center,row);
+                }
+            }
+        }
+    }
+}
+
+// ---------- Projects PAGE -----------------
+
+
+.projects-wrap{    
+    .projects-list{
+        margin-top:80px;
+
+        .project-header{
+            color: $color-white;
+            text-shadow: 0 0 15px $color-primary;
+            font-size: 60px;
+        }
+        .project-info{
+            color: $color-primary
+        }
+        .list-item{
+            @include flex-center-row;
+        }
+        .project-img{
+            max-height: 300px;
+            width: auto;
+            max-width: 600px;
+        }
+        .btn{
+            color: $color-white;
+        }        
+    }
+}
+
+
+
+
+
+// ---------- About PAGE -----------------
+
+.about-wrap{
+    h1,h2{
+        color: $color-primary;
+    }
+    .headline{
+        padding-bottom: 100px;
+        h1{            
+            font-size: 60px;
+        }       
+    }
+    h4{
+        text-align: justify;
+    }
+
+    .info-wrap,.info-wrap2{
+        @include custom-flex(space-between,center,row-reverse);
+        flex-wrap: wrap;
+        .text-wrap{
+            height: 100%;
+            @include custom-flex(space-between,center,column);
+        }
+        .info-img{
+            max-height: 300px;
+            height: auto;
+            max-width: 300px;
+            width: auto;
+        }
+    }
+    .info-wrap2{
+        @include custom-flex(space-between,center,row);
+    }
+
+}
+
+
+// ---------- Contact PAGE -----------------
+
+.contact-wrap{
+    @include flex-center-column;
+
+    .main{
+        @include custom-flex(space-between,center,column);
+        .list-item-link{
+            @include link-btn;
+            
+        }
+        .list{
+            border-radius: 25px;
+            border-top: 2px solid $color-primary;
+            border-bottom: 2px solid $color-primary;
+        }
+    }
+    .contact-headline{
+        @include custom-flex(space-between,center,row);
+        @include hover-transition;
+        margin: auto;
+        width: 600px;
+        
+        padding: 10px;
+    }
+    .contact-header{
+        text-shadow: 0 0 15px $color-primary;
+        font-size: 60px;
+        margin-top: 50px;
+    }
+    .contact-text{
+        color:$color-primary;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,12 @@
+.header{
+    @include flex-center-row;
+    height: $nav-height;
+    z-index: 5;
+    .nav-link{
+        @include reset-text;
+        @include link-btn;
+        @include hover-transition;
+
+
+    }
+}
