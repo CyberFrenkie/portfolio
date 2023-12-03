@@ -1,0 +1,20 @@
+.footer{
+    @include flex-center-row;
+    @include reset-p-m;
+    z-index: 5;
+    height: $footer-height;
+    background-color: $color-primary;
+
+    .fa-brands{
+        padding: 10px;
+        font-size: 30px;
+
+        @include scale-transition;
+    }
+}
+
+.about-wrap{
+    .footer{
+        margin-top: 50px;
+    }
+}
