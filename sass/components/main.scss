@@ -1,7 +1,7 @@
 .wrapper{  
     @include flex-center-column; 
     @include reset-p-m;
-   
+
 
     color: $color-white;    
     text-align: center;
@@ -10,7 +10,7 @@
         min-height: $calc-height;
 
         .hire-link{           
-            @include cta;                   
+            @include cta;                
         }
     }
     ul,a{
@@ -19,13 +19,20 @@
 }
 
 // ---------- HOME PAGE -----------------
-.home-wrap{
+.home-wrap{    
+    @include custom-flex(space-between,center,column);
+    height: 100vh;
+
     .main{
-        @include overlay;
+        @include overlay; 
+        @include flex-center-row; 
+        height: 100%; 
+
         .content-wrap{
             @include custom-flex(space-between,center,row-reverse);
-            flex-wrap: wrap;
-            min-height: $calc-height;
+            height: 100%; 
+            flex-wrap: wrap;  
+            padding: 30px;         
 
             @media only screen and (max-width:800px) {
                 @include custom-flex(center,center,row-reverse);
@@ -34,22 +41,25 @@
                 z-index: 5;                
             }
 
-            .img-wrap,img{
-                max-height: 400px;
-                width: auto;
-                border-radius: 25px;
-                border-bottom: 3px solid $color-primary;
-                border-right: 3px solid $color-primary;
-                z-index: 5;                
+            .img-wrap{
+                height: 400px;
+                width: auto;                
+                z-index: 5; 
+
+                @media only screen and (max-width:800px) {
+                    height: 300px;
+                }               
+            }
+            .info-img{
+                width: 100%;
+                height: 100%;
+                @include border-corner;
             }
             .text-wrap{
                 z-index: 5;
-                height: 100%;
                 
                 h1,h2{
-                    font-size: 70px;   
-                    font-family: $font-family-akaya;  
-                    text-shadow: 0 0 15px $color-primary;               
+                    @include header(70px);          
                 }
                 h1{
                     @include custom-flex(flex-start,center,row);
@@ -71,30 +81,30 @@
 // ---------- Projects PAGE -----------------
 
 
-.projects-wrap{    
+.projects-wrap{
+    @include background($img2);
+
     .projects-list{
-        margin-top:80px;
         @include reset-p-m;
+        margin-top:80px;
+       
         @media only screen and (max-width:800px) {
             margin-top:10px;
         }
 
-        .project-header{
-            color: $color-white;
-            text-shadow: 0 0 15px $color-primary;
-            font-size: 60px;
+        .project-header{            
+            @include header(60px);
+
         }
         .project-info{
-            color: $color-primary
+            color: $color-primary;
         }
         .list-item{
-            @include flex-center-row;
-            
+            @include flex-center-row;            
         }
         .project-img{
-            max-height: 300px;
-            width: auto;
-            max-width: 600px;
+            @include img-wrap(300px,600px);
+
             @media only screen and (max-width:800px) {
                 max-width: 100%;
             }
@@ -112,31 +122,58 @@
 // ---------- About PAGE -----------------
 
 .about-wrap{
+    @include background($img2);
     h1,h2{
-        color: $color-primary;
+        @include header(70px);
+           
     }
     .headline{
         padding-bottom: 100px;
         h1{            
             font-size: 60px;
-        }       
+        }
+
+        @media only screen and (max-width:800px) {
+            padding-bottom: 20px;
+
+            h1{            
+                font-size: 40px;
+            }
+        }
+    }
+    h2{
+        font-size: 30px;
     }
     h4{
         text-align: justify;
+        color: $color-primary;
     }
 
     .info-wrap,.info-wrap2{
         @include custom-flex(space-between,center,row-reverse);
         flex-wrap: wrap;
         .text-wrap{
-            height: 100%;
             @include custom-flex(space-between,center,column);
+            height: 100%;
+        }
+        .img-wrap{
+            @media only screen and (max-width:1200px) {
+                max-width: 300px;
+                margin: auto;
+            }
         }
         .info-img{
-            max-height: 300px;
-            height: auto;
-            max-width: 300px;
-            width: auto;
+            @include img-wrap(300px,300px);
+
+            @media only screen and (max-width:800px) {
+                @include border-corner;
+                margin: auto; 
+                padding: 0;
+               
+            }
+            @media only screen and (max-width:1200px) {
+                max-width: 100%;
+            }
         }
     }
     .info-wrap2{
@@ -150,23 +187,25 @@
 
 .contact-wrap{
     @include flex-center-column;
+    @include background($img2);
 
     .main{
         @include custom-flex(space-between,center,column);
         .list-item-link{
             @include link-btn;
-
         }
         .list{
             @include reset-p-m;
+            @include border-t-b;
             margin-top: 50px;
             margin-bottom: 50px;
-            border-radius: 25px;
-            border-top: 2px solid $color-primary;
-            border-bottom: 2px solid $color-primary;
+            
             @media only screen and (max-width:800px) {
                 width: 100%;  
             }
+        }
+        h2{
+            text-shadow: 0 0 15px $color-primary;
         }
     }
     .contact-headline{
@@ -175,19 +214,24 @@
         margin: auto;
         width: 600px;        
         padding: 0 5px;
+
         @media only screen and (max-width:800px) {
             width: 100%;  
             font-size: 25px;
         }
     }
     .contact-header{
-        text-shadow: 0 0 15px $color-primary;
-        font-size: 60px;
+        @include header(70px);
         margin-top: 50px;
+
+        @media only screen and (max-width:800px) {
+            width: 100%;  
+            font-size: 40px;
+        }
 
     }
     .contact-text{
         color:$color-primary;
-        padding: 20px;
+        padding: 20px;       
     }
 }

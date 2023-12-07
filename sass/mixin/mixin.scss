@@ -106,6 +106,7 @@
 @mixin pseudo($top, $bottom, $left, $right, $display) {
     display: $display;
     position: absolute;
+
     top: $top;
     left: $left;
     right: $right;
@@ -117,12 +118,25 @@
 @mixin overlay {
     &::before {
         @include pseudo(0, 0, 0, 0, block);
-        z-index: 1;
-        background: no-repeat center/100% url('../../img/home.png');
-
+        @include background($img1);
+        z-index: 1;        
         opacity: 0.2;
+        height: 100%;
+        width: 100%;
+        @media only screen and (max-width:800px) {
+            @include background($img2);
+        }
     }
 }
+
+@mixin background($bckg){
+    background-image:  $bckg;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;    
+    background-blend-mode: darken;
+}
+
 
 
 
@@ -171,4 +185,30 @@
     display: -webkit-box;
     -webkit-line-clamp: 3; 
     -webkit-box-orient: vertical;
+}
+
+@mixin border-corner{
+    border-radius: $primary-radius;
+    border-bottom: 3px solid $color-primary;
+    border-right: 3px solid $color-primary;
+}
+
+@mixin border-t-b{
+    border-radius: $primary-radius;
+    border-top: 2px solid $color-primary;
+    border-bottom: 2px solid $color-primary;
+}
+
+@mixin header($size){
+    font-size: $size;   
+    // font-family: $font-family-akaya;  
+    text-shadow: 0 0 15px $color-primary; 
+    color: $color-white;
+}
+
+@mixin img-wrap($mh,$mw) {
+    height: auto;
+    max-height: $mh;
+    width: auto;
+    max-width: $mw;
 }

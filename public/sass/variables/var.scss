@@ -55,10 +55,10 @@ $full-screen-height: 100vh;
 $slider-height: 80vh;
 $footer-height: 70px;
 $nav-height: 150px;
-$calc-height: calc(100vh - ($nav-height + $footer-height))
+$calc-height: calc(100vh - ($nav-height + $footer-height));
 
 //Radius
-
+$primary-radius: 25px;
 
 
 //Margins
@@ -69,4 +69,7 @@ $calc-height: calc(100vh - ($nav-height + $footer-height))
 
 
 //img
+
+$img1: url('../../img/home.png');
+$img2: url('../../img/green-smoke-abstraction-digital-art.jpg');
 

@@ -88,6 +88,20 @@
   text-decoration: none;
 }
 
+.home-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.home-wrap .main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 100%;
+}
 .home-wrap .main::before {
   display: block;
   position: absolute;
@@ -96,17 +110,33 @@
   right: 0;
   bottom: 0;
   content: "";
+  background-image: url("../../img/home.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: darken;
   z-index: 1;
-  background: no-repeat center/100% url("../../img/home.png");
   opacity: 0.2;
+  height: 100%;
+  width: 100%;
+}
+@media only screen and (max-width: 800px) {
+  .home-wrap .main::before {
+    background-image: url("../../img/green-smoke-abstraction-digital-art.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: darken;
+  }
 }
 .home-wrap .main .content-wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row-reverse;
+  height: 100%;
   flex-wrap: wrap;
-  min-height: calc(100vh - 220px);
+  padding: 30px;
 }
 @media only screen and (max-width: 800px) {
   .home-wrap .main .content-wrap {
@@ -119,22 +149,30 @@
 .home-wrap .main .content-wrap .hire-wrap {
   z-index: 5;
 }
-.home-wrap .main .content-wrap .img-wrap, .home-wrap .main .content-wrap img {
-  max-height: 400px;
+.home-wrap .main .content-wrap .img-wrap {
+  height: 400px;
   width: auto;
+  z-index: 5;
+}
+@media only screen and (max-width: 800px) {
+  .home-wrap .main .content-wrap .img-wrap {
+    height: 300px;
+  }
+}
+.home-wrap .main .content-wrap .info-img {
+  width: 100%;
+  height: 100%;
   border-radius: 25px;
   border-bottom: 3px solid darkcyan;
   border-right: 3px solid darkcyan;
-  z-index: 5;
 }
 .home-wrap .main .content-wrap .text-wrap {
   z-index: 5;
-  height: 100%;
 }
 .home-wrap .main .content-wrap .text-wrap h1, .home-wrap .main .content-wrap .text-wrap h2 {
   font-size: 70px;
-  font-family: "Akaya Telivigala", sans-serif;
   text-shadow: 0 0 15px darkcyan;
+  color: white;
 }
 .home-wrap .main .content-wrap .text-wrap h1 {
   display: flex;
@@ -154,10 +192,17 @@
   }
 }
 
+.projects-wrap {
+  background-image: url("../../img/green-smoke-abstraction-digital-art.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: darken;
+}
 .projects-wrap .projects-list {
-  margin-top: 80px;
   padding: 0;
   margin: 0;
+  margin-top: 80px;
 }
 @media only screen and (max-width: 800px) {
   .projects-wrap .projects-list {
@@ -165,9 +210,9 @@
   }
 }
 .projects-wrap .projects-list .project-header {
-  color: white;
-  text-shadow: 0 0 15px darkcyan;
   font-size: 60px;
+  text-shadow: 0 0 15px darkcyan;
+  color: white;
 }
 .projects-wrap .projects-list .project-info {
   color: darkcyan;
@@ -179,6 +224,7 @@
   flex-direction: row;
 }
 .projects-wrap .projects-list .project-img {
+  height: auto;
   max-height: 300px;
   width: auto;
   max-width: 600px;
@@ -192,8 +238,17 @@
   color: white;
 }
 
+.about-wrap {
+  background-image: url("../../img/green-smoke-abstraction-digital-art.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: darken;
+}
 .about-wrap h1, .about-wrap h2 {
-  color: darkcyan;
+  font-size: 70px;
+  text-shadow: 0 0 15px darkcyan;
+  color: white;
 }
 .about-wrap .headline {
   padding-bottom: 100px;
@@ -201,8 +256,20 @@
 .about-wrap .headline h1 {
   font-size: 60px;
 }
+@media only screen and (max-width: 800px) {
+  .about-wrap .headline {
+    padding-bottom: 20px;
+  }
+  .about-wrap .headline h1 {
+    font-size: 40px;
+  }
+}
+.about-wrap h2 {
+  font-size: 30px;
+}
 .about-wrap h4 {
   text-align: justify;
+  color: darkcyan;
 }
 .about-wrap .info-wrap, .about-wrap .info-wrap2 {
   display: flex;
@@ -212,17 +279,37 @@
   flex-wrap: wrap;
 }
 .about-wrap .info-wrap .text-wrap, .about-wrap .info-wrap2 .text-wrap {
-  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  height: 100%;
+}
+@media only screen and (max-width: 1200px) {
+  .about-wrap .info-wrap .img-wrap, .about-wrap .info-wrap2 .img-wrap {
+    max-width: 300px;
+    margin: auto;
+  }
 }
 .about-wrap .info-wrap .info-img, .about-wrap .info-wrap2 .info-img {
-  max-height: 300px;
   height: auto;
-  max-width: 300px;
+  max-height: 300px;
   width: auto;
+  max-width: 300px;
+}
+@media only screen and (max-width: 800px) {
+  .about-wrap .info-wrap .info-img, .about-wrap .info-wrap2 .info-img {
+    border-radius: 25px;
+    border-bottom: 3px solid darkcyan;
+    border-right: 3px solid darkcyan;
+    margin: auto;
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .about-wrap .info-wrap .info-img, .about-wrap .info-wrap2 .info-img {
+    max-width: 100%;
+  }
 }
 .about-wrap .info-wrap2 {
   display: flex;
@@ -237,6 +324,11 @@
   align-items: center;
   flex-direction: row;
   flex-direction: column;
+  background-image: url("../../img/green-smoke-abstraction-digital-art.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: darken;
 }
 .contact-wrap .main {
   display: flex;
@@ -256,16 +348,19 @@
 .contact-wrap .main .list {
   padding: 0;
   margin: 0;
-  margin-top: 50px;
-  margin-bottom: 50px;
   border-radius: 25px;
   border-top: 2px solid darkcyan;
   border-bottom: 2px solid darkcyan;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 @media only screen and (max-width: 800px) {
   .contact-wrap .main .list {
     width: 100%;
   }
+}
+.contact-wrap .main h2 {
+  text-shadow: 0 0 15px darkcyan;
 }
 .contact-wrap .contact-headline {
   display: flex;
@@ -287,9 +382,16 @@
   }
 }
 .contact-wrap .contact-header {
+  font-size: 70px;
   text-shadow: 0 0 15px darkcyan;
-  font-size: 60px;
+  color: white;
   margin-top: 50px;
+}
+@media only screen and (max-width: 800px) {
+  .contact-wrap .contact-header {
+    width: 100%;
+    font-size: 40px;
+  }
 }
 .contact-wrap .contact-text {
   color: darkcyan;
