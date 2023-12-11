@@ -23,6 +23,7 @@
     @include custom-flex(space-between,center,column);
     height: 100vh;
 
+
     .main{
         @include overlay; 
         @include flex-center-row; 
@@ -36,6 +37,7 @@
 
             @media only screen and (max-width:800px) {
                 @include custom-flex(center,center,row-reverse);
+                padding: 0;
             }
             .hire-wrap{
                 z-index: 5;                
@@ -47,7 +49,7 @@
                 z-index: 5; 
 
                 @media only screen and (max-width:800px) {
-                    height: 250px;
+                    max-height: 250px;
                 }               
             }
             .info-img{

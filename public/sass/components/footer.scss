@@ -11,12 +11,12 @@
 
         @include scale-transition;
     }
-    .face,.insta,.linked{
+    .face,.insta{
         @media only screen and (max-width:800px) {
             display:none;
         }
     }
-    .face-m,.insta-m,.linked-m{
+    .face-m,.insta-m{
         
         display:none;
         @media only screen and (max-width:800px) {
